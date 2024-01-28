@@ -3,19 +3,19 @@
 trigger:
 - main
 
-pool:
-  vmImage: 'ubuntu-latest'
-
 stages:
 - stage: Build
   displayName: 'Build Stage'
-  - deployment: VMDeploy
-      displayName: Deploy to VM
-      environment: 
+  jobs:
+  - deployment: 
+    displayName: Deploy VM
+    pool: 
+      vmImage: windows-latest
+    environment:
       name: AzDevOpsVM
       resourceType: virtualMachine
-      resourceName: WIN11 
-  jobs:
+      resourceName: WIN11
+      
   - job: BuildJob
     displayName: 'Build Job'
     steps:
