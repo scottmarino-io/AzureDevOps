@@ -15,7 +15,7 @@ stages:
     - script: |
         echo "Hello World"
       displayName: 'Run Shell Script'
-    environment: AzDevOpsVM
+
 
 - stage: stage2
   displayName: 'Stage 2'
@@ -30,4 +30,4 @@ stages:
     - script: |
         echo "Hello World"
       displayName: 'Run Shell Script'
-    environment: AzDevOpsVM
+
