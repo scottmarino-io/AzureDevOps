@@ -2,8 +2,6 @@ stages:
 - stage: Deploy
   pool: 
    name: SJM Agents
-   demands:
-    - agent.name -equals WIN11
   jobs:
   - job: BuildJob
     steps:
