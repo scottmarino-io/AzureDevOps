@@ -9,6 +9,10 @@ pool:
 stages:
 - stage: Build
   displayName: 'Build Stage'
+  environment:
+    name: AzDevOpsVM
+    resourceType: VirtualMachine
+    resourceName: Ubuntu
   jobs:
   - job: BuildJob
     displayName: 'Build Job'
@@ -17,6 +21,10 @@ stages:
 
 - stage: Test
   displayName: 'Test Stage'
+    environment:
+    name: AzDevOpsVM
+    resourceType: VirtualMachine
+    resourceName: Ubuntu
   jobs:
   - job: TestJob
     displayName: 'Test Job'
