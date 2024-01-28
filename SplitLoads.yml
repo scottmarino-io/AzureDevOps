@@ -8,6 +8,7 @@ stages:
   - job: RunShellScriptOnWin11
     displayName: 'Run Shell Script on WIN11'
     pool:
+      vmImage: 'windows-2019'
       demands:
       - Agent.Name -equals WIN11
     steps:
@@ -15,17 +16,16 @@ stages:
         echo "Hello World"
       displayName: 'Run Shell Script'
 
-
 - stage: stage2
   displayName: 'Stage 2'
   jobs:
   - job: RunShellScriptOnUbuntu
     displayName: 'Run Shell Script on Ubuntu'
     pool:
+      vmImage: 'ubuntu-latest'
       demands:
       - Agent.Name -equals ubuntu
     steps:
     - script: |
         echo "Hello World"
       displayName: 'Run Shell Script'
-
