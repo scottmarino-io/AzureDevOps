@@ -5,14 +5,14 @@ trigger:
 
 pool:
   vmImage: 'ubuntu-latest'
-
-stages:
-- stage: Build
-  displayName: 'Build Stage'
   environment:
     name: AzDevOpsVM
     resourceType: VirtualMachine
     resourceName: Ubuntu
+
+stages:
+- stage: Build
+  displayName: 'Build Stage'
   jobs:
   - job: BuildJob
     displayName: 'Build Job'
@@ -21,10 +21,6 @@ stages:
 
 - stage: Test
   displayName: 'Test Stage'
-    environment:
-    name: AzDevOpsVM
-    resourceType: VirtualMachine
-    resourceName: Ubuntu
   jobs:
   - job: TestJob
     displayName: 'Test Job'
