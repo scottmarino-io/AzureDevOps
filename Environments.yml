@@ -8,8 +8,8 @@ jobs:
 - deployment: VMDeploy
   displayName: Deploy to VM
   environment: AzDevOpsVM
-   name: VMenv
-   resourceName: VMenv
+   name: Ubuntu   
+   resourceName: Ubuntu 
    resourceType: virtualMachine
   strategy:
      runOnce:
