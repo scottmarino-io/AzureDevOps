@@ -1,0 +1,30 @@
+# Azure Pipelines YAML
+
+trigger:
+- main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+stages:
+- stage: Build
+  displayName: 'Build Stage'
+  jobs:
+  - job: BuildJob
+    displayName: 'Build Job'
+    steps:
+    - script: echo "Hello World"
+
+- stage: Test
+  displayName: 'Test Stage'
+  jobs:
+  - job: TestJob
+    displayName: 'Test Job'
+    steps:
+    - task: AzureCLI@2
+      displayName: 'Azure CLI Version Check'
+      inputs:
+        azureSubscription: 'YourAzureServiceConnectionName' # Update with your Azure service connection
+        scriptType: 'bash'
+        scriptLocation: 'inlineScript'
+        inlineScript: 'az --version'
