@@ -1,9 +1,10 @@
-trigger:
-- main
-
-pool:
-  name: WIN11
-
-steps:
-- script: echo "hello world"
-  displayName: 'Run a simple shell script'
+stages:
+- stage: Deploy
+  pool: 
+   name: SJM Agents
+   demands:
+    - agent.name -equals WIN11
+  jobs:
+  - job: BuildJob
+    steps:
+    - script: echo Building!
