@@ -7,10 +7,12 @@ pool:
 jobs:
 - deployment: VMDeploy
   displayName: Deploy to VM
-  environment: AzDevOpsVM
-   name:AzDevOpsVM
+  environment: 
+    name: AzDevOpsVM
+    resourceType: virtualMachine
+    resourceName: Ubuntu
   strategy:
-     runOnce:
-        deploy:   
+    runOnce:
+      deploy:   
           steps:
-            - script: echo "Hello world"
+          - script: echo "Hello world"
