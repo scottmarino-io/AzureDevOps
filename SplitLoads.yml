@@ -8,7 +8,6 @@ stages:
   - job: RunShellScriptOnWin11
     displayName: 'Run Shell Script on WIN11'
     pool:
-      vmImage: 'windows-2019'
       demands:
       - Agent.Name -equals WIN11
     steps:
@@ -23,7 +22,6 @@ stages:
   - job: RunShellScriptOnUbuntu
     displayName: 'Run Shell Script on Ubuntu'
     pool:
-      vmImage: 'ubuntu-latest'
       demands:
       - Agent.Name -equals ubuntu
     steps:
