@@ -3,7 +3,7 @@ stages:
   pool: 
    name: SJM Agents
    demands:
-    - agent.name -equals WIN11
+    - agent.name -equals Ubuntu
   jobs:
   - job: BuildJob
     steps:
