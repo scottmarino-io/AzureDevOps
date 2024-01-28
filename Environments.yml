@@ -8,7 +8,7 @@ jobs:
 - deployment: VMDeploy
   displayName: Deploy to VM
   environment: AzDevOpsVM
-   name:Ubuntu
+   name:AzDevOpsVM
    resourceName:Ubuntu 
    resourceType:virtualMachine
   strategy:
