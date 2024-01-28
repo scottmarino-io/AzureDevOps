@@ -24,7 +24,7 @@ stages:
     - task: AzureCLI@2
       displayName: 'Azure CLI Version Check'
       inputs:
-        azureSubscription: 'YourAzureServiceConnectionName' # Update with your Azure service connection
+        azureSubscription: 'Microsoft Partner Network(1)(0f00f93f-0899-453c-b398-7345b67daf9f)'
         scriptType: 'bash'
         scriptLocation: 'inlineScript'
         inlineScript: 'az --version'
