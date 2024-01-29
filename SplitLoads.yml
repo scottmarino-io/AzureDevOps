@@ -1,21 +1,21 @@
 stages:
-- stage: Deploy
+- stage: Build
   pool: 
    name: SJM Agents
   jobs:
-  - job: DeployJob1
-    steps:
-    - script: echo DeployJob1
-  - job: DeployJob2
-    steps:
-      - script: echo DeployJob2
-- stage: Build
-  pool:
-    name: SJM Agents
-  jobs:
   - job: BuildJob1
     steps:
-      - script: echo BuildJob1
+    - script: echo DeployJob1
   - job: BuildJob2
     steps:
       - script: echo BuildJob2
+- stage: Deploy
+  pool:
+    name: SJM Agents
+  jobs:
+  - job: DeployJob1
+    steps:
+      - script: echo DeployJob1
+  - job: DepoloyJob2
+    steps:
+      - script: echo DeployJob2
