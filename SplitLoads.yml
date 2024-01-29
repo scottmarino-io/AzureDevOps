@@ -5,12 +5,15 @@ stages:
     steps:
     - task: AzureResourceManagerTemplateDeployment@3
       inputs:
-        deploymentScope: 'Subscription'
-        azureResourceManagerConnection: 'Microsoft Partner Network(1)(0f00f93f-0899-453c-b398-7345b67daf9f)'
+        deploymentScope: 'Resource Group'
+        azureResourceManagerConnection: 'Microsoft Partner Network(2)(0f00f93f-0899-453c-b398-7345b67daf9f)'
         subscriptionId: '0f00f93f-0899-453c-b398-7345b67daf9f'
+        action: 'Create Or Update Resource Group'
+        resourceGroupName: 'AzureDevOps'
         location: 'East US'
         templateLocation: 'Linked artifact'
-        csmFile: 'https://aka.ms/sampletemplate'
+        csmFile: 'https://github.com/Azure/azure-quickstart-templates/blob/master/demos/ubuntu-desktop-gnome-rdp/azuredeploy.json'
+        csmParametersFile: 'https://github.com/Azure/azure-quickstart-templates/blob/master/demos/ubuntu-desktop-gnome-rdp/azuredeploy.parameters.json'
         deploymentMode: 'Incremental'
         deploymentName: 'AzureDevOps'
         deploymentOutputs: 'AzureDevOpsOut'
