@@ -5,17 +5,17 @@ stages:
   jobs:
   - job: DeployJob1
     steps:
-    - script: echo DeployJob1!
+    - script: echo DeployJob1
   - job: DeployJob2
     steps:
-      - script: az -version
+      - script: echo DeployJob2
 - stage: Build
   pool:
     name: SJM Agents
   jobs:
   - job: BuildJob1
     steps:
-      - script: az account list
+      - script: echo BuildJob1
   - job: BuildJob2
     steps:
-      - script: az --version
+      - script: echo BuildJob2
