@@ -1,4 +1,20 @@
 stages:
+- stage: Create
+  jobs:
+  - job: CreateAzureResources
+    steps:
+    - task: AzureResourceManagerTemplateDeployment@3
+      inputs:
+        deploymentScope: 'Subscription'
+        azureResourceManagerConnection: 'Microsoft Partner Network(1)(0f00f93f-0899-453c-b398-7345b67daf9f)'
+        subscriptionId: '0f00f93f-0899-453c-b398-7345b67daf9f'
+        location: 'East US'
+        templateLocation: 'Linked artifact'
+        csmFile: 'https://aka.ms/sampletemplate'
+        deploymentMode: 'Incremental'
+        deploymentName: 'AzureDevOps'
+        deploymentOutputs: 'AzureDevOpsOut'
+
 - stage: Build
   pool: 
    name: SJM Agents
