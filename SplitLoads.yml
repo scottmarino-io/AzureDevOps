@@ -13,5 +13,6 @@ stages:
   pool:
     name: SJM Agents
     jobs:
+    - job: BuildJob1
     steps:
       - script: az account list
